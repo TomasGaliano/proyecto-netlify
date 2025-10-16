@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Imagen en Netlify</title>
+  <title>Validar sesión</title>
   <style>
     .rounded-circle {
       border-radius: 50%;
       display: block;
       margin: 20px auto;
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    }
+    #content {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <img src="/profile-pic.png" alt="@hacklab" class="rounded-circle" style="width: 500px; height: 500px; object-fit: cover;" />
-</body>
-</html>
+  <div id="content"></div>
+
+  <script>
+    // Función para obtener la cookie 'session'
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (let c of cookies) {
