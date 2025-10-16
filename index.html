@@ -22,10 +22,13 @@
 </head>
 <body>
   <div id="content">
-    <img src="https://chl-5dbf7331-dbf0-4bf2-9b51-8307efe94499-imagen-importante.softwareseguro.com.ar/profile-pic" />
+    <img id="imagen" src="https://chl-5dbf7331-dbf0-4bf2-9b51-8307efe94499-imagen-importante.softwareseguro.com.ar/profile-pic" />
   </div>
 
   <script>
+    document.getElementById("imagen").addEventListener("load", function() {
+      console.log("OK");
+    });
   </script>
 </body>
 </html>
