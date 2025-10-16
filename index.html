@@ -28,3 +28,26 @@
     function getCookie(name) {
       const cookies = document.cookie.split("; ");
       for (let c of cookies) {
+        const [key, value] = c.split("=");
+        if (key === name) return value;
+      }
+      return null;
+    }
+
+    const session = getCookie("session");
+    const content = document.getElementById("content");
+
+    if (session) {
+      // Si existe la cookie, mostrar la imagen
+      const img = document.createElement("img");
+      img.src = "profile-pic.jpg"; // Asegurate que el archivo esté en el repo
+      img.alt = "@hacklab";
+      img.className = "rounded-circle";
+      content.appendChild(img);
+    } else {
+      // Si no hay cookie, mostrar mensaje de acceso denegado
+      content.textContent = "Acceso no autorizado";
+    }
+  </script>
+</body>
+</html>
