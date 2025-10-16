@@ -26,8 +26,10 @@
   </div>
 
   <script>
-    document.getElementById("imagen").addEventListener("load", function() {
-      console.log("OK");
+    var imagen = document.getElementById("imagen");
+    imagen.addEventListener("load", function() {
+      console.log("Imagen cargada");
+      console.log(imagen.naturalWidth);
     });
   </script>
 </body>
